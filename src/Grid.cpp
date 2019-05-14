@@ -6,7 +6,7 @@
 // Returns a cell at a given position in the grid. If the given position is out
 // the bounds of the grid (either: x < 0, x > numCols or y < 0, y > numRows)
 // then a cell with the state of NONE is returned
-Cell Grid::getCellAt(int x, int y)
+Cell Grid::getCellAt(const int x, const int y)
 {
     if (isOutOfBounds(x, y))
     {
@@ -21,7 +21,7 @@ Cell Grid::getCellAt(int x, int y)
 }
 
 // Checks if a cell is out of the bounds of the grid
-bool Grid::isOutOfBounds(int x, int y)
+bool Grid::isOutOfBounds(const int x, const int y)
 {
     return (x < 0 || x > numCols || y < 0 || y > numRows);
 }
@@ -33,7 +33,7 @@ void Grid::init()
 }
 
 // Resizes the grid to the desired number of columns and rows
-void Grid::resize(int c, int r)
+void Grid::resize(const int c, const int r)
 {
     numCols = c;
     numRows = r;
@@ -54,7 +54,7 @@ void Grid::resize(int c, int r)
 }
 
 // Replaces the current cell in the grid with the passed in cell
-void Grid::setCell(Cell c)
+void Grid::setCell(const Cell c)
 {
     cells[c.getXPosition()][c.getYPosition()] = c;
 }
