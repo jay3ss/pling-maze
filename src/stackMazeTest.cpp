@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Grid.h"
-#include "Maze.h"
+#include "pling/Grid.h"
+#include "pling/Maze.h"
 
 using namespace std;
 

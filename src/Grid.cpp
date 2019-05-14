@@ -1,7 +1,7 @@
 /** @file Grid.cpp
  * Implements grid of cell objects.
  */
-#include "Grid.h"
+#include "pling/Grid.h"
 
 // Returns a cell at a given position in the grid. If the given position is out
 // the bounds of the grid (either: x < 0, x > numCols or y < 0, y > numRows)

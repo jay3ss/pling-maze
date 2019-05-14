@@ -8,10 +8,10 @@
 #include <cstdlib>
 #include <ctime>
 #include <random>
+#include <stack>
 #include <vector>
-#include "Cell.h"
-#include "Grid.h"
-#include "LinkedStack.h"
+#include "pling/Cell.h"
+#include "pling/Grid.h"
 
 // Defines the direction within the maze. The maze starts at (0, 0) in the top
 // left and increases to the right and down.
@@ -138,7 +138,7 @@ public:
     @return The  ostream object (strm) */
     friend std::ostream &operator<<(std::ostream &strm, const Maze &obj);
 private:
-    LinkedStack<Cell> stack;    // Stack for the maze generation algorithm
+    std::stack<Cell> stack;     // Stack for the maze generation algorithm
     Grid grid;                  // Grid for the maze
     int start[2];               // Starting point
 

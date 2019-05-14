@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "Cell.h"
-#include "Grid.h"
+#include "pling/Cell.h"
+#include "pling/Grid.h"
 
 using namespace std;
 

@@ -1,7 +1,7 @@
 /** @file Maze.h
  * Implements a maze.
  */
-#include "Maze.h"
+#include "pling/Maze.h"
 
 // Constructor
 Maze::Maze(int c, int r, bool randStart)
@@ -45,8 +45,8 @@ void Maze::generate()
 	grid.setCell(startCell);
 	stack.push(startCell);
 
-    Cell topCell = stack.peek();
-    while (!stack.isEmpty())
+    Cell topCell = stack.top();
+    while (!stack.empty())
     {
         // Randomly get a neighbor to topCell
         Cell nextCell = getRandomNeighbor(topCell);
@@ -64,9 +64,9 @@ void Maze::generate()
 			stack.push(nextCell);
         }
 
-        if (!stack.isEmpty())
+        if (!stack.empty())
         {
-            topCell = stack.peek();
+            topCell = stack.top();
         }
     }
 }

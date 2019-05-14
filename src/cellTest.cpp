@@ -1,7 +1,7 @@
 #include <array>
 #include <iostream>
 #include <string>
-#include "Cell.h"
+#include "pling/Cell.h"
 
 using namespace std;
 
