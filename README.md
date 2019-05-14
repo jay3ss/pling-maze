@@ -13,16 +13,21 @@ somewhere.
 ## Getting this thing to work
 To do an out of source build
 
-- git clone https://github.com/jay3ss/pling-maze
-- cd pling-maze
-- mkdir build && cd build
-- cmake ..
-- make
+```
+$ git clone https://github.com/jay3ss/pling-maze
+$ cd pling-maze
+$ mkdir build && cd build
+$ cmake ..
+$ make
+```
 
 ### To test or not to test
 If you want to compile and run the tests too, you'll need to let CMake know
 
-- mkdir build && cd build
-- cmake .. -DCMAKE_PREFIX_PATH=/path/to/Catch2/ -DBUILD_TESTING=ON
-- make
-- make test
+```
+$ git clone https://github.com/jay3ss/pling-maze
+$ mkdir build && cd build
+$ cmake .. -DCMAKE_PREFIX_PATH=/path/to/Catch2/ -DBUILD_TESTING=ON
+$ make
+$ make test
+```
