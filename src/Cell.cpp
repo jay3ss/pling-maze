@@ -1,7 +1,7 @@
 /** @file Cell.cpp
  * Implements an individual cell of a grid.
  */
-#include "Cell.h"
+#include "pling/Cell.h"
 
 // Copy constructor
 Cell::Cell(const Cell &c)
