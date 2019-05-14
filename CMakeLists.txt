@@ -3,6 +3,8 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "-std=c++11")
 project(plingmaze VERSION "0.0.1")
 
+find_package(Catch2 REQUIRED)
+
 include_directories(include)
 
 # Create the libraries
