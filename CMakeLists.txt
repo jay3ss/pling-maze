@@ -35,14 +35,26 @@ if(BUILD_TESTING)
 
     # Test the Cell class
     add_executable(testcell tests/test-cell.cpp)
-    target_link_libraries(testcell testsmain)
+    target_link_libraries(testcell
+        ${PROJECT_NAME}_libcell
+        testsmain
+    )
+
+    # Test the Cell class
+    add_executable(testgrid tests/test-grid.cpp)
+    target_link_libraries(testgrid
+        ${PROJECT_NAME}_libgrid
+        testsmain
+    )
 
     # Make tests discoverable
     include(CTest)
     include(Catch)
     catch_discover_tests(testcell)
+    catch_discover_tests(testgrid)
 
     # use `make test` to run the tests
     enable_testing()
     add_test(NAME CellTest COMMAND testcell)
+    add_test(NAME GridTest COMMAND testgrid)
 endif()
