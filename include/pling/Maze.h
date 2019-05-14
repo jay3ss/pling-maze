@@ -74,7 +74,7 @@ public:
     /** Checks if a cell has any unvisited neighbors
     @param c Cell object to see if it has any neighbors
     @return true if the cell has any unvisited neighbors, false otherwise */
-    bool hasUnvisitedNeighbors(const Cell c);
+    bool hasUnvisitedNeighbors(const Cell &c);
 
     /** Returns a random state
     @return A random state, either: OCCUPIED or UNOCCUPIED */
@@ -84,7 +84,7 @@ public:
     /** Checks if a cell is a wall
     @param c The cell to check
     @return true if the cell is a wall, false otherwise */
-    bool isWall(const Cell c);
+    bool isWall(const Cell &c);
 
     /** Checks if a cell is an outer wall
     @param x x-coordinate of the cell
@@ -129,7 +129,7 @@ public:
     @param c The cell to find the neighbor of
     @return The random neighboring cell, if possible. If not possible a cell
         with the state NONE is returned */
-    Cell getRandomNeighbor(const Cell c);
+    Cell getRandomNeighbor(const Cell &c);
 
     // Overloaded operators
     /** Overloaded << operator to allow easy printing of Maze objects

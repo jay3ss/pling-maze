@@ -63,7 +63,7 @@ public:
     @param c The cell to replace the cell in the grid
     @post The current cell in the grid will be replaced with the passed in
         cell, c */
-    void setCell(const Cell c);
+    void setCell(const Cell &c);
 
     // Overloaded operators
     /** Overloaded << operator to allow easy printing of Grid objects

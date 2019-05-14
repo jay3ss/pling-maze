@@ -54,7 +54,7 @@ void Grid::resize(const int c, const int r)
 }
 
 // Replaces the current cell in the grid with the passed in cell
-void Grid::setCell(const Cell c)
+void Grid::setCell(const Cell &c)
 {
     cells[c.getXPosition()][c.getYPosition()] = c;
 }

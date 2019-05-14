@@ -73,7 +73,7 @@ void Maze::generate()
 
 // Checks if there are any unvisited neighboring cells. Returns true if there
 // are any unvisited neighboring cells, false otherwise
-bool Maze::hasUnvisitedNeighbors(const Cell c)
+bool Maze::hasUnvisitedNeighbors(const Cell &c)
 {
     int xPos = c.getXPosition();
     int yPos = c.getYPosition();
@@ -139,7 +139,7 @@ void Maze::setStart(const int x, const int y)
 }
 
 // Checks if a cell is a wall
-bool Maze::isWall(Cell c)
+bool Maze::isWall(const Cell &c)
 {
     return c.getState() == cell::State::OCCUPIED;
 }
@@ -239,7 +239,7 @@ void Maze::randomStart()
 }
 
 // Returns a random neighbor to the passed in cell, if possible
-Cell Maze::getRandomNeighbor(Cell c)
+Cell Maze::getRandomNeighbor(const Cell &c)
 {
     int x = c.getXPosition();
     int y = c.getYPosition();

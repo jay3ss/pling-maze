@@ -78,7 +78,7 @@ public:
     /** Sets the state of the cell
     @post The x- and y-coordinates (position) of the cell will be updated
     @param s The state of the cell */
-    void setState(const cell::State s) { state = s; }
+    void setState(const cell::State &s) { state = s; }
 
     // Overloaded operators
     /** Overloaded = operator to allow assignment of cells
