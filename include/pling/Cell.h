@@ -22,7 +22,8 @@ class Cell
 {
 public:
     // Constructor
-    Cell(cell::State s = cell::State::UNVISITED, int x = 0, int y = 0) :
+    Cell(const cell::State s = cell::State::UNVISITED,
+         const int x = 0, const int y = 0) :
         state(s), xPosition(x), yPosition(x) {}
 
 	// Copy constructor
@@ -72,12 +73,12 @@ public:
     @post The x- and y-coordinates (position) of the cell will be updated
     @param x The x-coordinate of the cell
     @param y The y-coordinate of the cell */
-    void setPosition(int x, int y) { xPosition = x; yPosition = y; }
+    void setPosition(const int x, const int y) { xPosition = x; yPosition = y; }
 
     /** Sets the state of the cell
     @post The x- and y-coordinates (position) of the cell will be updated
     @param s The state of the cell */
-    void setState(const cell::State s) { state = s; }
+    void setState(const cell::State &s) { state = s; }
 
     // Overloaded operators
     /** Overloaded = operator to allow assignment of cells

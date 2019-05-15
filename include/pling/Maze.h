@@ -34,7 +34,7 @@ public:
     @param randStart Determines if the starting point of the maze will be
         determined randomly. If true, the starting point is determined randomly
         otherwise, the user must set it manually */
-    Maze(int c = 1, int r = 1, bool randStart = true);
+    Maze(const int c = 1, const int r = 1, const bool randStart = true);
 
     // Destructor
     ~Maze() {}
@@ -56,7 +56,7 @@ public:
     @return The cell at the given coordinates. If the cell is out of bounds,
         then a cell with the state of NONE is returned (there are no cells
         that are out of bounds) and the passed in coordinates. */
-    Cell getCellAt(int x, int y) { return grid.getCellAt(x, y); }
+    Cell getCellAt(const int x, const int y) { return grid.getCellAt(x, y); }
 
     /** Returns the value used to seed the random number generator
     @return The value used to seed the random number generator */
@@ -74,7 +74,7 @@ public:
     /** Checks if a cell has any unvisited neighbors
     @param c Cell object to see if it has any neighbors
     @return true if the cell has any unvisited neighbors, false otherwise */
-    bool hasUnvisitedNeighbors(Cell c);
+    bool hasUnvisitedNeighbors(const Cell &c);
 
     /** Returns a random state
     @return A random state, either: OCCUPIED or UNOCCUPIED */
@@ -84,39 +84,39 @@ public:
     /** Checks if a cell is a wall
     @param c The cell to check
     @return true if the cell is a wall, false otherwise */
-    bool isWall(Cell c);
+    bool isWall(const Cell &c);
 
     /** Checks if a cell is an outer wall
     @param x x-coordinate of the cell
     @param y y-coordinate of the cell
     @return true if the cell is an outer wall, false otherwise */
-    bool isOuterWall(int x, int y);
+    bool isOuterWall(const int x, const int y);
 
     /** Checks if a cell is a north wall
     @param y y-coordinate of the cell
     @return true if the cell is a north wall, false otherwise */
-    bool isNorthWall(int y);
+    bool isNorthWall(const int y);
 
     /** Checks if a cell is a south wall
     @param y y-coordinate of the cell
     @return true if the cell is a south wall, false otherwise */
-    bool isSouthWall(int y);
+    bool isSouthWall(const int y);
 
     /** Checks if a cell is an east wall
     @param x x-coordinate of the cell
     @return true if the cell is an east wall, false otherwise */
-    bool isEastWall(int x);
+    bool isEastWall(const int x);
 
     /** Checks if a cell is a west wall
     @param x x-coordinate of the cell
     @return true if the cell is a west wall, false otherwise */
-    bool isWestWall(int x);
+    bool isWestWall(const int x);
 
     /** Checks if a cell is the starting point
     @param x x-coordinate of the cell
     @param y y-coordinate of the cell
     @return true if the cell is the starting point, false otherwise */
-    bool isStart(int x, int y);
+    bool isStart(const int x, const int y);
 
     // Mutators
     /** Defines the starting point
@@ -129,7 +129,7 @@ public:
     @param c The cell to find the neighbor of
     @return The random neighboring cell, if possible. If not possible a cell
         with the state NONE is returned */
-    Cell getRandomNeighbor(Cell c);
+    Cell getRandomNeighbor(const Cell &c);
 
     // Overloaded operators
     /** Overloaded << operator to allow easy printing of Maze objects
@@ -152,7 +152,7 @@ private:
     @param min The minimum number of the range
     @param min The maximum number of the range
     @return A random number between min and max */
-    int generateRandomNumber(int min, int max);
+    int generateRandomNumber(const int min, const int max);
 
     /** Seeds the random number generator
     @post The random number will be seeded */

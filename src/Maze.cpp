@@ -4,7 +4,7 @@
 #include "pling/Maze.h"
 
 // Constructor
-Maze::Maze(int c, int r, bool randStart)
+Maze::Maze(const int c, const int r, const bool randStart)
 {
     grid = Grid(c, r);
     initGrid();
@@ -73,7 +73,7 @@ void Maze::generate()
 
 // Checks if there are any unvisited neighboring cells. Returns true if there
 // are any unvisited neighboring cells, false otherwise
-bool Maze::hasUnvisitedNeighbors(Cell c)
+bool Maze::hasUnvisitedNeighbors(const Cell &c)
 {
     int xPos = c.getXPosition();
     int yPos = c.getYPosition();
@@ -139,43 +139,43 @@ void Maze::setStart(const int x, const int y)
 }
 
 // Checks if a cell is a wall
-bool Maze::isWall(Cell c)
+bool Maze::isWall(const Cell &c)
 {
     return c.getState() == cell::State::OCCUPIED;
 }
 
 // Checks if a cell is an outer wall
-bool Maze::isOuterWall(int x, int y)
+bool Maze::isOuterWall(const int x, const int y)
 {
     return (isNorthWall(y) || isEastWall(x) || isSouthWall(y) || isWestWall(x));
 }
 
 // Checks if a cell is a north wall
-bool Maze::isNorthWall(int y)
+bool Maze::isNorthWall(const int y)
 {
     return y == 0;
 }
 
 // Checks if a cell is a south wall
-bool Maze::isSouthWall(int y)
+bool Maze::isSouthWall(const int y)
 {
     return y == (grid.getNumRows() - 1);
 }
 
 // Checks if a cell is an east wall
-bool Maze::isEastWall(int x)
+bool Maze::isEastWall(const int x)
 {
     return x == (grid.getNumCols() - 1);
 }
 
 // Checks if a cell is a west wall
-bool Maze::isWestWall(int x)
+bool Maze::isWestWall(const int x)
 {
     return x == 0;
 }
 
 // Checks if a cell is the starting point
-bool Maze::isStart(int x, int y)
+bool Maze::isStart(const int x, const int y)
 {
     return (x == start[0] && y == start[1]);
 }
@@ -213,7 +213,7 @@ void Maze::initGrid()
     }
 }
 
-int Maze::generateRandomNumber(int min, int max)
+int Maze::generateRandomNumber(const int min, const int max)
 {
     return (rand() % (max - min + 1)) + min;
 }
@@ -239,7 +239,7 @@ void Maze::randomStart()
 }
 
 // Returns a random neighbor to the passed in cell, if possible
-Cell Maze::getRandomNeighbor(Cell c)
+Cell Maze::getRandomNeighbor(const Cell &c)
 {
     int x = c.getXPosition();
     int y = c.getYPosition();
